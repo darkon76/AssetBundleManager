@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4333c9e64c168140a51f353baddc834, type: 3}
+  m_Name: TestCubeStyle
+  m_EditorClassIdentifier: 
+  ShapeReference:
+    name: TestCube
+    bundle: shapes
+    guid: e1d9ae84b49e3b647b7c40f5fb2bbf76
+  SecondaryShapeReference:
+    name: Sphere
+    bundle: 
+    guid: ff597632eaba72949b5610e05f72e480
