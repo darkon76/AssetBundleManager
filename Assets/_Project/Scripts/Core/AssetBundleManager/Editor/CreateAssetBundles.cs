@@ -2,16 +2,22 @@ using System.IO;
 using UnityEditor;
 using UnityEngine;
 
-public class CreateAssetBundles
+namespace Scripts.Core.AssetBundleManager.Editor
 {
-    [MenuItem ("Assets/Build AssetBundles")]
-    static void BuildAllAssetBundles ()
+    public class CreateAssetBundles
     {
-        string assetBundleBuildPath = $"{Application.streamingAssetsPath}/{ABMConstants.BundlePath}";
-        if (!Directory.Exists(assetBundleBuildPath))
+        [MenuItem("Assets/Build AssetBundles")]
+        private static void BuildAllAssetBundles()
         {
-            Directory.CreateDirectory(assetBundleBuildPath);
+            string assetBundleBuildPath = $"{Application.streamingAssetsPath}/{ABMConstants.BundlePath}";
+            
+            if (!Directory.Exists(assetBundleBuildPath))
+            {
+                Directory.CreateDirectory(assetBundleBuildPath);
+            }
+            
+            BuildPipeline.BuildAssetBundles(assetBundleBuildPath, BuildAssetBundleOptions.None,
+                EditorUserBuildSettings.activeBuildTarget);
         }
-        BuildPipeline.BuildAssetBundles (assetBundleBuildPath, BuildAssetBundleOptions.None, BuildTarget.StandaloneWindows64);
     }
 }

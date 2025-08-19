@@ -1,6 +1,7 @@
-using UnityEngine;
-
-public class ABMConstants
+namespace Scripts.Core.AssetBundleManager
 {
-    public const string BundlePath = "AssetBundles";
+    public class ABMConstants
+    {
+        public const string BundlePath = "AssetBundles";
+    }
 }
