@@ -23,8 +23,7 @@ public class AssetReferenceDrawer : PropertyDrawer
         var objectReferenceRect = new Rect(position.x, position.y, position.width / 2, position.height);
         var bundleRect = new Rect(position.x + (position.width / 2) , position.y, position.width / 2, position.height);
 
-        var nameProperty = property.FindPropertyRelative(nameof(AssetReference.name));
-        var bundleProperty = property.FindPropertyRelative(nameof(AssetReference.bundle));
+        var bundleProperty = property.FindPropertyRelative(nameof(AssetReference.Bundle));
         
         var guidProperty = property.FindPropertyRelative("guid");
         var assetPath = AssetDatabase.GUIDToAssetPath(guidProperty.stringValue);
@@ -37,6 +36,7 @@ public class AssetReferenceDrawer : PropertyDrawer
             var selectionGuid = AssetDatabase.GUIDFromAssetPath(selectionPath);
             guidProperty.stringValue = selectionGuid.ToString();
 
+//If you enter debug mode you can see the name and bundle of the selected object.
             nameProperty.stringValue = Path.GetFileNameWithoutExtension(selectionPath);
             bundleProperty.stringValue = AssetDatabase.GetImplicitAssetBundleName(selectionPath);
         }

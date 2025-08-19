@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: TestCubeStyle
   m_EditorClassIdentifier: 
   ShapeReference:
-    name: TestCube
-    bundle: shapes
+    Name: TestCube
+    Bundle: shapes
     guid: e1d9ae84b49e3b647b7c40f5fb2bbf76
   SecondaryShapeReference:
-    name: Sphere
-    bundle: 
+    Name: Sphere
+    Bundle: 
     guid: ff597632eaba72949b5610e05f72e480
