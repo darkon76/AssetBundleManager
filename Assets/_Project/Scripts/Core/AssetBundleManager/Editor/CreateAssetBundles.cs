@@ -4,10 +4,27 @@ using UnityEngine;
 
 namespace Scripts.Core.AssetBundleManager.Editor
 {
+    [InitializeOnLoad]
+    static class AutoBuildAssets
+    {
+        //Because the test requires that the reviewer open unity, press play and see a sample prefab loaded from an asset bundle. 
+        //For a smoother experience we build the asset bundles at the initialize on load of the editor.
+        //In a normal project it is recommended that the CI or manually create the bundles. 
+        static AutoBuildAssets()
+        {
+            if (!SessionState.GetBool("BundlesBuild", false))
+            {
+                // Startup code here...
+                CreateAssetBundles.BuildAllAssetBundles();
+                SessionState.SetBool("BundlesBuild", true);
+            }
+        }
+    }
+    
     public class CreateAssetBundles
     {
         [MenuItem("Assets/Build AssetBundles")]
-        private static void BuildAllAssetBundles()
+        public static void BuildAllAssetBundles()
         {
             string assetBundleBuildPath = $"{Application.streamingAssetsPath}/{ABMConstants.BundlePath}";
             
