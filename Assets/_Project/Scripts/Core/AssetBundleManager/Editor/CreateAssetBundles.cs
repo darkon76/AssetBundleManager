@@ -26,6 +26,13 @@ namespace Scripts.Core.AssetBundleManager.Editor
         [MenuItem("Assets/Build AssetBundles")]
         public static void BuildAllAssetBundles()
         {
+            //We need to be sure that everything is linked correctly before building. 
+            if (!AssetValidator.ValidateAssets())
+            {
+                Debug.LogError("BuildAllAssetBundles interrupted validateAssets failed");
+                return;
+            }
+            
             string assetBundleBuildPath = $"{Application.streamingAssetsPath}/{ABMConstants.BundlePath}";
             
             if (!Directory.Exists(assetBundleBuildPath))

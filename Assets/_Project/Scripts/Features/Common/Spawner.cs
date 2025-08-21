@@ -14,7 +14,7 @@ namespace Scripts.Features.Common
             {
                 go.transform.SetPositionAndRotation(transform.position, transform.rotation);
             }
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 }

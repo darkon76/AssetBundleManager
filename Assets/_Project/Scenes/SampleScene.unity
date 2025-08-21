@@ -149,9 +149,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _assetReference:
+    Guid: ff597632eaba72949b5610e05f72e480
     Name: Sphere
     Bundle: shapes
-    Guid: ff597632eaba72949b5610e05f72e480
 --- !u!4 &153886111
 Transform:
   m_ObjectHideFlags: 0
@@ -455,9 +455,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _assetReference:
-    Name: TestCube
-    Bundle: shapes
     Guid: e1d9ae84b49e3b647b7c40f5fb2bbf76
+    Name: Cube
+    Bundle: shapes
 --- !u!4 &781339337
 Transform:
   m_ObjectHideFlags: 0
